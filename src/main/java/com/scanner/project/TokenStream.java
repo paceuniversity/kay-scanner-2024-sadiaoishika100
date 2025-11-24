@@ -152,17 +152,18 @@ public class TokenStream {
 
 				return t;
 
-                  case ':':
+            case ':':
 				// Look for :=
 				nextChar = readChar();
 				if (nextChar == '=') {
 				t.setValue(t.getValue() + nextChar);
 				nextChar = readChar();
-				return t;} 
-				else {
+				return t;
+				} 
+	            else {
 		t.setType("Other");
-	}
-	return t;
+	            }
+	          return t;
 			default: // all other operators
 				nextChar = readChar();
 				return t;
@@ -313,3 +314,4 @@ public class TokenStream {
 		return isEof;
 	}
 }
+
